@@ -136,10 +136,10 @@
             }
         }
         
-        /* Hero Section */
+        /* Hero Section with van image */
         .hero {
             padding: 180px 0 120px;
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(52, 152, 219, 0.8)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(52, 152, 219, 0.85)), url('https://images.unsplash.com/photo-1593941707882-a5bba5338fe2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -241,6 +241,54 @@
         
         .service-content p {
             color: #7f8c8d;
+        }
+        
+        /* Van Gallery Section */
+        .gallery {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .van-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .van-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .van-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .van-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .van-info {
+            padding: 20px;
+            background: white;
+        }
+        
+        .van-info h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .van-info p {
+            color: #7f8c8d;
+            font-size: 0.95rem;
         }
         
         /* Booking Section */
@@ -449,6 +497,7 @@
             text-align: center;
         }
         
+        /* Social Icons in Circle */
         .social-icons {
             display: flex;
             gap: 15px;
@@ -459,20 +508,40 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             transition: all 0.3s;
             text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         
         .social-icon:hover {
-            background: #3498db;
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-icon.facebook:hover {
+            background: #3b5998;
+        }
+        
+        .social-icon.line:hover {
+            background: #00C300;
+        }
+        
+        .social-icon.instagram:hover {
+            background: #E1306C;
+        }
+        
+        .social-icon.twitter:hover {
+            background: #1DA1F2;
+        }
+        
+        .social-icon.youtube:hover {
+            background: #FF0000;
         }
         
         .copyright {
@@ -704,6 +773,10 @@
                 min-width: 100%;
                 padding-right: 0;
             }
+            
+            .van-gallery {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -731,6 +804,7 @@
                 <ul>
                     <li><a href="#home">หน้าหลัก</a></li>
                     <li><a href="#services">บริการของเรา</a></li>
+                    <li><a href="#gallery">ภาพรถตู้</a></li>
                     <li><a href="#booking">จองรถ</a></li>
                     <li><a href="#contact">ติดต่อเรา</a></li>
                 </ul>
@@ -795,6 +869,42 @@
         </div>
     </section>
     
+    <!-- Van Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>รถตู้ของเรา</h2>
+                <p>รถตู้ใหม่ สะอาด ปลอดภัย พร้อมให้บริการคุณทุกเส้นทางท่องเที่ยว</p>
+            </div>
+            
+            <div class="van-gallery">
+                <div class="van-item">
+                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="รถตู้สีขาว" class="van-image">
+                    <div class="van-info">
+                        <h4>รถตู้ VIP 12 ที่นั่ง</h4>
+                        <p>รถตู้สุดหรู พร้อมเครื่องปรับอากาศ แบ่งที่นั่งสบาย ระบบเสียงคุณภาพสูง</p>
+                    </div>
+                </div>
+                
+                <div class="van-item">
+                    <img src="https://images.unsplash.com/photo-1563720223485-8d6d5c5c8d9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="รถตู้สีเงิน" class="van-image">
+                    <div class="van-info">
+                        <h4>รถตู้มาตรฐาน 9 ที่นั่ง</h4>
+                        <p>รถตู้มาตรฐานสะอาด ปลอดภัย พร้อมคนขับมืออาชีพ</p>
+                    </div>
+                </div>
+                
+                <div class="van-item">
+                    <img src="https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w-800&q=80" alt="รถตู้สีดำ" class="van-image">
+                    <div class="van-info">
+                        <h4>รถตู้พิเศษ 15 ที่นั่ง</h4>
+                        <p>รถตู้ขนาดใหญ่เหมาะสำหรับทัวร์หมู่คณะ พื้นที่เก็บสัมภาระกว้างขวาง</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Booking Section -->
     <section class="booking" id="booking">
         <div class="container">
@@ -847,6 +957,7 @@
                             <option value="4-6">4-6 คน</option>
                             <option value="7-9">7-9 คน</option>
                             <option value="10-12">10-12 คน</option>
+                            <option value="13-15">13-15 คน</option>
                         </select>
                     </div>
                     
@@ -908,17 +1019,20 @@
                     <h3>TaxiVanTour</h3>
                     <p>บริการรถตู้แท็กซี่นำเที่ยวคุณภาพสูง พร้อมคนขับมืออาชีพ ปลอดภัย มีประกัน ราคายุติธรรม พร้อมให้บริการคุณตลอด 24 ชั่วโมง</p>
                     <div class="social-icons">
-                        <a href="https://facebook.com" class="social-icon" target="_blank">
+                        <a href="https://facebook.com" class="social-icon facebook" target="_blank">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://line.me" class="social-icon" target="_blank">
+                        <a href="https://line.me" class="social-icon line" target="_blank">
                             <i class="fab fa-line"></i>
                         </a>
-                        <a href="https://instagram.com" class="social-icon" target="_blank">
+                        <a href="https://instagram.com" class="social-icon instagram" target="_blank">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://twitter.com" class="social-icon" target="_blank">
+                        <a href="https://twitter.com" class="social-icon twitter" target="_blank">
                             <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://youtube.com" class="social-icon youtube" target="_blank">
+                            <i class="fab fa-youtube"></i>
                         </a>
                     </div>
                 </div>
@@ -1082,6 +1196,12 @@
                     });
                 }
             });
+        });
+        
+        // Set minimum date to today for booking form
+        window.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('date').min = today;
         });
     </script>
 </body>
